@@ -1,0 +1,10 @@
+.toolbar {
+  margin-bottom: 10px;
+}
+
+.menuitem {
+  margin-left: 10px;
+  color: #673ab7;
+  cursor: pointer;
+  font-size: 18px;
+}

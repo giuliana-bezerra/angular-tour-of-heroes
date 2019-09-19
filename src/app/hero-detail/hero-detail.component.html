@@ -1,0 +1,64 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <img mat-card-lg-image alt="Avatar" [src]="data.image" />
+  <br />
+  <form #form="ngForm">
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        name="avatar"
+        #name="ngModel"
+        [(ngModel)]="data.image"
+        placeholder="Image URL"
+        required
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="data.name"
+        placeholder="Name"
+        required
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        name="franchise"
+        #name="ngModel"
+        [(ngModel)]="data.franchise"
+        placeholder="Franchise"
+        required
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMaxRows="10"
+        #autosize="cdkTextareaAutosize"
+        name="description"
+        #description="ngModel"
+        [(ngModel)]="data.description"
+        placeholder="Description"
+        required
+      ></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-button
+    color="primary"
+    [mat-dialog-close]="data"
+    [disabled]="!form.valid"
+  >
+    OK
+  </button>
+  <button mat-button color="primary" (click)="onCancel()">Cancel</button>
+</div>

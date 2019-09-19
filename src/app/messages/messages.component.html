@@ -1,0 +1,9 @@
+<div *ngIf="messageService.messages.length">
+  <div
+    *ngFor="let message of messageService.messages"
+    class="alert alert-success"
+  >
+    <span class="closebtn" (click)="messageService.clear()">&times;</span>
+    <div>{{ message }}</div>
+  </div>
+</div>

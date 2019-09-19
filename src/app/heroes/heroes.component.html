@@ -1,0 +1,27 @@
+<mat-grid-list cols="6" rowHeight="85px">
+  <mat-grid-tile
+    *ngFor="let hero of heroes; let i = index"
+    rowspan="5"
+    colspan="2"
+  >
+    <mat-card class="example-card">
+      <mat-card-header>
+        <img mat-card-avatar class="example-header-image" [src]="hero.image" />
+        <mat-card-title>{{ hero.name | uppercase }}</mat-card-title>
+        <mat-card-subtitle>{{ hero.franchise }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-lg-image [src]="hero.image" alt="" />
+      <mat-card-content style="height: 100px; overflow-y: auto;">
+        <p>{{ hero.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onEdit(i)">
+          Edit
+        </button>
+        <button mat-raised-button color="primary" (click)="onDelete(i)">
+          Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
