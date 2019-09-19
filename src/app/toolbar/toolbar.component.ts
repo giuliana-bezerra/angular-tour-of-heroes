@@ -24,7 +24,7 @@ export class ToolbarComponent implements OnInit {
 
     dialog.afterClosed().subscribe(result => {
       if (result) {
-        this.service.addHero(result).subscribe(result => console.log('OK!!!'));
+        this.service.addHero(result).subscribe(_ => console.log('OK!!!'));
       }
     });
   }
