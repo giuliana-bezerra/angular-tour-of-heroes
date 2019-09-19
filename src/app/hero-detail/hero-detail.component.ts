@@ -10,7 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class HeroDetailComponent {
   constructor(
     public dialog: MatDialogRef<HeroDetailComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: {},
+    @Inject(MAT_DIALOG_DATA) public data: any,
   ) {}
 
   onCancel(): void {
